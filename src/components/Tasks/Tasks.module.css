@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,700;1,600&family=JetBrains+Mono:ital,wght@1,700&display=swap");
+.tasks_container {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 30px;
+}
+.task_container {
+  background-color: rgb(255, 255, 0);
+  border-radius: 15px;
+  min-width: 250px;
+  height: 450px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.task_container:last-child {
+  margin-right: 0;
+}
+.task_title {
+  font-family: "JetBrains Mono", monospace;
+  background-color: rgb(255, 233, 85);
+  border-radius: 15px;
+  font-size: 25px;
+  margin: 5px 10px;
+  color: rgb(102, 102, 102);
+  text-align: center;
+}
+.task {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  height: 85%;
+  margin: 0 10px;
+}
+.task_name {
+  display: flex;
+  flex-direction: column;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: bold;
+  background-color: rgb(251, 243, 193);
+  border-radius: 15px;
+  font-size: 20px;
+  height: 50px;
+}
+.task_name label {
+  margin: auto 10px;
+}
+.task_details {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 20px;
+}
+.task_details li {
+  list-style-type: none;
+}
+.subtask {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+}
+.name_of_subtask {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  margin-left: 5px;
+}
+.add_task_btn {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  padding: 0.2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+}
+.add_task_btn_icon {
+  min-width: 100%;
+  min-height: 100%;
+}
+.add_task_btn_icon:active {
+  min-width: 85%;
+  min-height: 85%;
+}

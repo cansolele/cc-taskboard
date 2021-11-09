@@ -3,34 +3,34 @@ import { IconContext } from "react-icons";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 const Tasks = () => {
   return (
-    <div className={style.tasks_container}>
-      <div className={style.task_container}>
-        <div className={style.task_title}>IMP::URG</div>
-        <div className={style.task}>
+    <div className={style.tasksboard_container}>
+      <div className={style.task_box_container}>
+        <h1 className={style.task_title}>IMP::URG</h1>
+        <div className={style.task_details_container}>
           <div className={style.task_name}>
             <label>
-              <input type="checkbox" /> Чат-бот Джефф
+              <input type="checkbox" /> <h2>Чат-бот Джефф</h2>
             </label>
           </div>
           <div className={style.task_details}>
-            <p className={style.subtask}>Задачи:</p>
+            <h3 className={style.subtask}>Задачи:</h3>
             <ul>
               <li>
                 <label>
                   <input type="checkbox" />{" "}
-                  <span className={style.name_of_subtask}>Задача 1</span>
+                  <h4 className={style.name_of_subtask}>Задача 1</h4>
                 </label>
               </li>
               <li>
                 <label>
                   <input type="checkbox" />{" "}
-                  <span className={style.name_of_subtask}>Задача 2</span>
+                  <h4 className={style.name_of_subtask}>Задача 2</h4>
                 </label>
               </li>
               <li>
                 <label>
                   <input type="checkbox" />{" "}
-                  <span className={style.name_of_subtask}>Задача 3</span>
+                  <h4 className={style.name_of_subtask}>Задача 3</h4>
                 </label>
               </li>
             </ul>
@@ -42,7 +42,6 @@ const Tasks = () => {
           </IconContext.Provider>
         </button>
       </div>
-      <div className={style.task_container}></div>
     </div>
   );
 };

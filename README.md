@@ -1,1 +1,3 @@
-# CreativeCorp TaskBoard
+# CC TaskBoard
+
+Доска задач и тайм-менеджер.

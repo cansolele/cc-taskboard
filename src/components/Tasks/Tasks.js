@@ -1,7 +1,23 @@
 import style from "./Tasks.module.css";
 import { IconContext } from "react-icons";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-const Tasks = () => {
+const Tasks = (props) => {
+  const addSubTask = (event) => {
+    event.preventDefault();
+    if (props.inputSubTask.replace(/[\s.,%]/g, "") !== "") {
+      props.setSubTasks([
+        ...props.subTasks,
+        {
+          text: props.inputSubTask,
+          id: Math.random() * 1000,
+        },
+      ]);
+      props.setInputSubTask("");
+    }
+  };
+  const inputSubTaskHandler = (event) => {
+    props.setInputSubTask(event.target.value);
+  };
   return (
     <div className={style.tasksboard_container}>
       <div className={style.task_box_container}>
@@ -15,30 +31,22 @@ const Tasks = () => {
           <div className={style.task_details}>
             <h3 className={style.subtask_info}>Подзадачи:</h3>
             <ul>
+              {props.subTasks.map((subTask) => (
+                <li key={subTask.id}>
+                  <label>
+                    <input type="checkbox" />{" "}
+                    <h4 className={style.name_of_subtask}>{subTask.text}</h4>
+                  </label>
+                </li>
+              ))}
               <li>
-                <label>
-                  <input type="checkbox" />{" "}
-                  <h4 className={style.name_of_subtask}>Задача 1</h4>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input type="checkbox" />{" "}
-                  <h4 className={style.name_of_subtask}>Задача 2</h4>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input type="checkbox" />{" "}
-                  <h4 className={style.name_of_subtask}>Задача 3</h4>
-                </label>
-              </li>
-              <li>
-                <form action="">
+                <form action="" onSubmit={addSubTask}>
                   <input
                     type="text"
                     className={style.subtask_input}
                     placeholder="Добавьте подзадачу..."
+                    value={props.inputSubTask}
+                    onChange={inputSubTaskHandler}
                   />
                 </form>
               </li>

@@ -13,7 +13,7 @@ const Tasks = () => {
             </label>
           </div>
           <div className={style.task_details}>
-            <h3 className={style.subtask}>Задачи:</h3>
+            <h3 className={style.subtask_info}>Задачи:</h3>
             <ul>
               <li>
                 <label>
@@ -34,6 +34,18 @@ const Tasks = () => {
                 </label>
               </li>
             </ul>
+            <h3 className={style.subtask_info}>Заметки:</h3>
+            <p className={style.note}>
+              Curabitur consequat ultrices commodo. Cras ornare in dolor
+              fermentum posuere. Vestibulum tempor mauris odio, vitae feugiat
+              leo semper eu. Nam consequat congue scelerisque. Duis eget
+              condimentum sem. Sed quam ipsum, pretium condimentum diam dictum,
+              pharetra vulputate nunc. Vivamus sapien justo, placerat non auctor
+              et, pharetra molestie quam. In finibus, risus tempor dignissim
+              vulputate, elit metus finibus sapien, vitae lacinia dui turpis
+              eget sem
+            </p>
+            <h3 className={style.subtask_info}>Теги:</h3>
           </div>
         </div>
         <button className={style.add_task_btn}>

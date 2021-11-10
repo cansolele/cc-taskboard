@@ -13,7 +13,7 @@ const Tasks = () => {
             </label>
           </div>
           <div className={style.task_details}>
-            <h3 className={style.subtask_info}>Задачи:</h3>
+            <h3 className={style.subtask_info}>Подзадачи:</h3>
             <ul>
               <li>
                 <label>
@@ -33,7 +33,17 @@ const Tasks = () => {
                   <h4 className={style.name_of_subtask}>Задача 3</h4>
                 </label>
               </li>
+              <li>
+                <form action="">
+                  <input
+                    type="text"
+                    className={style.subtask_input}
+                    placeholder="Добавьте подзадачу..."
+                  />
+                </form>
+              </li>
             </ul>
+
             <h3 className={style.subtask_info}>Заметки:</h3>
             <p className={style.note}>
               Curabitur consequat ultrices commodo. Cras ornare in dolor

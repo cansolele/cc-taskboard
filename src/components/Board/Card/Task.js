@@ -1,22 +1,22 @@
 import SubTasks from "./SubTasks";
 import style from "./Task.module.css";
+import { useState } from "react";
 const Task = (props) => {
+  const [inputSubTask, setInputSubTask] = useState("");
   const addSubTask = (event) => {
     event.preventDefault();
-    if (props.inputSubTask.replace(/[\s.,%]/g, "") !== "") {
+    if (inputSubTask.replace(/[\s.,%]/g, "") !== "") {
       props.setSubTasks([
         ...props.subTasks,
         {
-          text: props.inputSubTask,
+          text: inputSubTask,
           id: Math.random() * 1000,
         },
       ]);
-      props.setInputSubTask("");
+      setInputSubTask("");
     }
   };
-  const inputSubTaskHandler = (event) => {
-    props.setInputSubTask(event.target.value);
-  };
+
   return (
     <div className={style.task_container}>
       <div className={style.task_name}>
@@ -36,8 +36,8 @@ const Task = (props) => {
                 type="text"
                 className={style.subtask_input}
                 placeholder="Добавьте подзадачу..."
-                value={props.inputSubTask}
-                onChange={inputSubTaskHandler}
+                value={inputSubTask}
+                onChange={(e) => setInputSubTask(e.target.value)}
               />
             </form>
           </li>

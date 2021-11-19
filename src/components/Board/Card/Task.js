@@ -1,18 +1,17 @@
-import SubTasks from "./SubTasks";
 import style from "./Task.module.css";
+import SubTasks from "./SubTasks";
 import { useState } from "react";
-const Task = (props) => {
+import { useDispatch, useSelector } from "react-redux";
+import { addSubTask } from "../../../store/cardSlice";
+const Task = () => {
   const [inputSubTask, setInputSubTask] = useState("");
-  const addSubTask = (event) => {
+  const subTasks = useSelector((state) => state.cards.subTasks);
+  const dispatch = useDispatch();
+
+  const addSubTaskAction = (event) => {
     event.preventDefault();
     if (inputSubTask.replace(/[\s.,%]/g, "") !== "") {
-      props.setSubTasks([
-        ...props.subTasks,
-        {
-          text: inputSubTask,
-          id: Math.random() * 1000,
-        },
-      ]);
+      dispatch(addSubTask({ inputSubTask }));
       setInputSubTask("");
     }
   };
@@ -27,11 +26,11 @@ const Task = (props) => {
       <div className={style.task_details}>
         <h3 className={style.subtask_info}>Подзадачи:</h3>
         <ul>
-          {props.subTasks.map((subTask) => (
+          {subTasks.map((subTask) => (
             <SubTasks key={subTask.id} text={subTask.text} />
           ))}
           <li>
-            <form action="" onSubmit={addSubTask}>
+            <form action="" onSubmit={addSubTaskAction}>
               <input
                 type="text"
                 className={style.subtask_input}

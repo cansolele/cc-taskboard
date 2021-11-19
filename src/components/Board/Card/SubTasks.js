@@ -1,10 +1,10 @@
 import style from "./SubTasks.module.css";
-const SubTasks = ({ text }) => {
+const SubTasks = ({ subTask }) => {
   return (
     <li>
       <label>
         <input type="checkbox" />{" "}
-        <h4 className={style.name_of_subtask}>{text}</h4>
+        <h4 className={style.name_of_subtask}>{subTask.subTaskName}</h4>
       </label>
     </li>
   );

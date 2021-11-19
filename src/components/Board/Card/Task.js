@@ -1,17 +1,16 @@
 import style from "./Task.module.css";
 import SubTasks from "./SubTasks";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addSubTask } from "../../../store/cardSlice";
-const Task = () => {
+import { useDispatch } from "react-redux";
+import { postSubTask } from "../../../store/boardSlice";
+const Task = ({ task }) => {
   const [inputSubTask, setInputSubTask] = useState("");
-  const subTasks = useSelector((state) => state.cards.subTasks);
   const dispatch = useDispatch();
 
   const addSubTaskAction = (event) => {
     event.preventDefault();
     if (inputSubTask.replace(/[\s.,%]/g, "") !== "") {
-      dispatch(addSubTask({ inputSubTask }));
+      dispatch(postSubTask(inputSubTask));
       setInputSubTask("");
     }
   };
@@ -20,14 +19,14 @@ const Task = () => {
     <div className={style.task_container}>
       <div className={style.task_name}>
         <label>
-          <input type="checkbox" /> <h2>Чат-бот Джефф</h2>
+          <input type="checkbox" /> <h2>{task.taskName}</h2>
         </label>
       </div>
       <div className={style.task_details}>
         <h3 className={style.subtask_info}>Подзадачи:</h3>
         <ul>
-          {subTasks.map((subTask) => (
-            <SubTasks key={subTask.id} text={subTask.text} />
+          {task.subTasks?.map((subTask) => (
+            <SubTasks key={subTask.id} subTask={subTask} />
           ))}
           <li>
             <form action="" onSubmit={addSubTaskAction}>
@@ -42,15 +41,7 @@ const Task = () => {
           </li>
         </ul>
         <h3 className={style.subtask_info}>Заметки:</h3>
-        <p className={style.note}>
-          Curabitur consequat ultrices commodo. Cras ornare in dolor fermentum
-          posuere. Vestibulum tempor mauris odio, vitae feugiat leo semper eu.
-          Nam consequat congue scelerisque. Duis eget condimentum sem. Sed quam
-          ipsum, pretium condimentum diam dictum, pharetra vulputate nunc.
-          Vivamus sapien justo, placerat non auctor et, pharetra molestie quam.
-          In finibus, risus tempor dignissim vulputate, elit metus finibus
-          sapien, vitae lacinia dui turpis eget sem
-        </p>
+        <p className={style.note}>{task.notes}</p>
         <h3 className={style.subtask_info}>Теги:</h3>
       </div>
     </div>

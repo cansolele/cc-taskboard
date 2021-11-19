@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cardReducer from "./cardSlice";
+import cardReducer from "./boardSlice";
 export default configureStore({
   reducer: {
-    cards: cardReducer,
+    board: cardReducer,
   },
 });

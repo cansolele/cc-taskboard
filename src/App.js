@@ -1,14 +1,14 @@
 import "./App.css";
 import Header from "./components/Header/Header";
-import Tasks from "./components/Tasks/Tasks";
 import { useState } from "react";
+import Board from "./components/Board/Board";
 const App = () => {
   const [inputSubTask, setInputSubTask] = useState("");
   const [subTasks, setSubTasks] = useState([]);
   return (
     <div className="app">
       <Header />
-      <Tasks
+      <Board
         inputSubTask={inputSubTask}
         setInputSubTask={setInputSubTask}
         subTasks={subTasks}

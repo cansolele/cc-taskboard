@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=IIBM+Plex+Sans:ital,wght@0,300;0,700;1,300;1,600&family=JetBrains+Mono:ital,wght@1,700&display=swap");
+.task_container {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  height: 85%;
+  margin: 0 10px;
+}
+.task_name {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(251, 243, 193);
+  border-radius: 15px;
+  height: 50px;
+}
+.task_name label {
+  margin: auto 10px;
+}
+.task_name h2 {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+.task_details {
+  display: flex;
+  max-height: 85%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+  margin: 5px 20px;
+}
+.task_details::-webkit-scrollbar {
+  width: 0;
+}
+.subtask_input {
+  width: 90%;
+  margin-left: 19px;
+  font-size: 19px;
+  text-indent: 1px;
+  font-style: italic;
+  font-weight: 300;
+  outline: none;
+  border: none;
+  color: rgb(102, 102, 102);
+}
+.note {
+  font-size: 20px;
+  line-height: 0.95;
+  font-weight: 100;
+}

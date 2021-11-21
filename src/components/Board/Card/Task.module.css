@@ -3,22 +3,37 @@
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   height: 85%;
-  margin: 0 10px;
+  margin-top: 5px;
 }
-.task_name {
-  display: flex;
-  flex-direction: column;
+.task_name_container {
   background-color: rgb(251, 243, 193);
   border-radius: 15px;
   height: 50px;
 }
-.task_name label {
+.task_name_container form {
+  height: 100%;
+}
+.task_name_container label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
   margin: auto 10px;
 }
-.task_name h2 {
-  display: inline-block;
+.task_name_input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background-color: transparent;
   font-size: 20px;
   font-weight: bold;
+  margin-left: 5px;
+  width: 100%;
+}
+.subtask_info {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 20px;
 }
 .task_details {
   display: flex;
@@ -42,8 +57,36 @@
   border: none;
   color: rgb(102, 102, 102);
 }
-.note {
+.note_input {
+  border: none;
+  outline: none;
+  font: inherit;
   font-size: 20px;
   line-height: 0.95;
   font-weight: 100;
+  width: 100%;
+}
+.note_input::-webkit-input-placeholder {
+  font-size: 19px;
+  text-indent: 19px;
+  font-weight: 300;
+  font-style: italic;
+}
+.note_input::-moz-placeholder {
+  font-size: 19px;
+  text-indent: 19px;
+  font-weight: 300;
+  font-style: italic;
+}
+.note_input:-moz-placeholder {
+  font-size: 19px;
+  text-indent: 19px;
+  font-weight: 300;
+  font-style: italic;
+}
+.note_input:-ms-input-placeholder {
+  font-size: 19px;
+  text-indent: 19px;
+  font-weight: 300;
+  font-style: italic;
 }

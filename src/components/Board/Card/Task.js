@@ -17,10 +17,13 @@ const Task = ({ task }) => {
 
   return (
     <div className={style.task_container}>
-      <div className={style.task_name}>
-        <label>
-          <input type="checkbox" /> <h2>{task.taskName}</h2>
-        </label>
+      <div className={style.task_name_container}>
+        <form>
+          <label>
+            <input type="checkbox" />
+            <input value={task.taskName} className={style.task_name_input} />
+          </label>
+        </form>
       </div>
       <div className={style.task_details}>
         <h3 className={style.subtask_info}>Подзадачи:</h3>
@@ -41,8 +44,15 @@ const Task = ({ task }) => {
           </li>
         </ul>
         <h3 className={style.subtask_info}>Заметки:</h3>
-        <p className={style.note}>{task.notes}</p>
+        <form>
+          <input
+            className={style.note_input}
+            placeholder="Добавьте заметки..."
+            value={task.notes}
+          />
+        </form>
         <h3 className={style.subtask_info}>Теги:</h3>
+        <h3 className={style.subtask_info}>Временные рамки:</h3>
       </div>
     </div>
   );

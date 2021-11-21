@@ -5,7 +5,10 @@ import Task from "./Task";
 const Card = ({ card }) => {
   return (
     <div className={style.card_container}>
-      <h1 className={style.card_title}>{card.title}</h1>
+      <form>
+        <input className={style.card_title} value={card.title} />
+      </form>
+
       {card.tasks?.map((task) => (
         <Task key={task.id} task={task} />
       ))}

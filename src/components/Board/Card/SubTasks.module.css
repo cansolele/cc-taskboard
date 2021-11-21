@@ -1,11 +1,6 @@
 li {
   list-style-type: none;
 }
-.subtask_info {
-  font-weight: 600;
-  font-style: italic;
-  font-size: 20px;
-}
 
 .name_of_subtask {
   display: inline-block;

@@ -21,7 +21,7 @@
   margin: auto 10px;
 }
 .task_name_input {
-  font-family: inherit;
+  font-family: "IBM Plex Sans", sans-serif;
   border: none;
   outline: none;
   background-color: transparent;
@@ -66,6 +66,7 @@
   width: 0;
 }
 .subtask_input {
+  font-family: "IBM Plex Sans", sans-serif;
   width: 90%;
   margin-left: 19px;
   font-size: 19px;
@@ -77,12 +78,12 @@
   color: rgb(102, 102, 102);
 }
 .note_input {
+  font-family: "IBM Plex Sans", sans-serif;
   border: none;
   outline: none;
-  font: inherit;
   font-size: 20px;
   line-height: 0.95;
-  font-weight: 100;
+  font-weight: 200;
   width: 100%;
 }
 .note_input::-webkit-input-placeholder {

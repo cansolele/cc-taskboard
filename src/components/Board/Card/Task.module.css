@@ -30,6 +30,25 @@
   margin-left: 5px;
   width: 100%;
 }
+.task_name_form {
+  display: flex;
+}
+.triple_colon_button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.triple_colon_icon {
+  padding-right: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(102, 102, 102);
+  font-style: normal;
+}
+.triple_colon_icon:hover {
+  color: rgba(102, 102, 102, 0.7);
+}
 .subtask_info {
   font-weight: 600;
   font-style: italic;

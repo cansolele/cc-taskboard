@@ -18,11 +18,14 @@ const Task = ({ task }) => {
   return (
     <div className={style.task_container}>
       <div className={style.task_name_container}>
-        <form>
+        <form className={style.task_name_form}>
           <label>
-            <input type="checkbox" />
+            <input type="checkbox" defaultChecked={task.completed} />
             <input value={task.taskName} className={style.task_name_input} />
           </label>
+          <button className={style.triple_colon_button}>
+            <span className={style.triple_colon_icon}>⁝</span>
+          </button>
         </form>
       </div>
       <div className={style.task_details}>

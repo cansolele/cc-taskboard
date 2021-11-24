@@ -2,7 +2,10 @@
   font-family: "IBM Plex Sans", sans-serif;
   display: flex;
   height: 70px;
+  width: 100%;
   background-color: rgb(143, 202, 255);
+  position: fixed;
+  top: 0;
 }
 .header_icon_container {
   display: flex;

@@ -5,8 +5,11 @@ import Task from "./Task";
 const Card = ({ card }) => {
   return (
     <div className={style.card_container}>
-      <form>
+      <form className={style.card_title_form}>
         <input className={style.card_title} value={card.title} />
+        <button className={style.triple_colon_button}>
+          <span className={style.triple_colon_icon}>⁝</span>
+        </button>
       </form>
 
       {card.tasks?.map((task) => (

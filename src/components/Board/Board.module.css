@@ -1,5 +1,5 @@
 .tasksboard_container {
   display: flex;
   flex-direction: row;
-  margin: 30px 30px;
+  margin-top: 100px;
 }

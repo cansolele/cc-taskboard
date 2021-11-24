@@ -5,23 +5,43 @@
   padding: 5px 8px;
   max-width: 22%;
   height: 450px;
-  margin-right: 30px;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
 }
-.card_container:last-child {
-  margin-right: 0;
+.card_title_form {
+  display: flex;
 }
 .card_title {
   font-family: "JetBrains Mono", monospace;
   background-color: rgb(255, 233, 85);
-  border-radius: 15px;
+  border-radius: 15px 0 0 15px;
   font-size: 25px;
+  text-indent: 18.33px;
+  font-style: italic;
+  font-weight: bold;
   color: rgb(102, 102, 102);
   text-align: center;
   border: none;
   outline: none;
   width: 100%;
+}
+.triple_colon_button {
+  background-color: rgb(255, 233, 85);
+  border-radius: 0 15px 15px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.triple_colon_icon {
+  padding-right: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(102, 102, 102);
+  font-style: normal;
+}
+.triple_colon_icon:hover {
+  color: rgba(102, 102, 102, 0.7);
 }
 
 .add_task_btn {

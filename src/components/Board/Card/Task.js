@@ -1,5 +1,6 @@
 import style from "./Task.module.css";
 import SubTasks from "./SubTasks";
+import TextareaAutosize from "@mui/base/TextareaAutosize";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postSubTask } from "../../../store/boardSlice";
@@ -48,9 +49,10 @@ const Task = ({ task }) => {
         </ul>
         <h3 className={style.subtask_info}>Заметки:</h3>
         <form>
-          <input
+          <TextareaAutosize
             className={style.note_input}
             placeholder="Добавьте заметки..."
+            spellCheck="false"
             value={task.notes}
           />
         </form>

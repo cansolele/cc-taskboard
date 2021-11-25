@@ -63,7 +63,7 @@
   margin: 5px 20px;
 }
 .task_details::-webkit-scrollbar {
-  width: 0;
+  display: none;
 }
 .subtask_input {
   font-family: "IBM Plex Sans", sans-serif;
@@ -84,7 +84,13 @@
   font-size: 20px;
   line-height: 0.95;
   font-weight: 200;
+  height: 50px;
   width: 100%;
+  resize: none;
+  overflow: auto;
+}
+.note_input::-webkit-scrollbar {
+  display: none;
 }
 .note_input::-webkit-input-placeholder {
   font-size: 19px;

@@ -1,13 +1,13 @@
-li {
+.subtasks_li_container {
   list-style-type: none;
 }
-li label {
+.subtasks_li_container label {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   height: 100%;
 }
-label input {
+.subtasks_li_container label input {
   margin-top: 7px;
 }
 

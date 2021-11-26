@@ -1,11 +1,18 @@
 .subtasks_li_container {
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .subtasks_li_container label {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+.subtasks_li_container label::-webkit-scrollbar {
+  display: none;
 }
 .subtasks_li_container label input {
   margin-top: 7px;
@@ -18,4 +25,63 @@
   font-weight: 300;
   font-size: 20px;
   margin-left: 5px;
+  white-space: nowrap;
+}
+.subtasks_tags_container {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-self: center;
+  margin-left: 8px;
+}
+.subtask_tag {
+  margin-left: 4px;
+  padding: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  height: 100%;
+  border-radius: 6px;
+}
+.add_tag_btn {
+  min-width: 20.5px;
+  min-height: 20.5px;
+  max-width: 20.5px;
+  max-height: 20.5px;
+  margin: 0px 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgb(227, 18, 218), rgb(229, 237, 67));
+}
+.add_tag_btn_icon {
+  width: 50%;
+  height: 50%;
+}
+.add_tag_btn:active > .add_tag_btn_icon {
+  width: 40%;
+  height: 40%;
+}
+.triple_colon_button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.triple_colon_icon {
+  padding-right: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(102, 102, 102);
+  font-style: normal;
+}
+.triple_colon_icon:hover {
+  color: rgba(102, 102, 102, 0.7);
 }

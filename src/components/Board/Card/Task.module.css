@@ -60,7 +60,8 @@
   overflow-x: hidden;
   overflow-y: auto;
   flex-direction: column;
-  margin: 5px 20px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 .task_details::-webkit-scrollbar {
   display: none;
@@ -68,7 +69,6 @@
 .subtask_input {
   font-family: "IBM Plex Sans", sans-serif;
   width: 90%;
-  margin-left: 19px;
   font-size: 19px;
   text-indent: 1px;
   font-style: italic;
@@ -76,6 +76,9 @@
   outline: none;
   border: none;
   color: rgb(102, 102, 102);
+}
+.note_input_form {
+  margin-right: 20px;
 }
 .note_input {
   font-family: "IBM Plex Sans", sans-serif;
@@ -94,25 +97,25 @@
 }
 .note_input::-webkit-input-placeholder {
   font-size: 19px;
-  text-indent: 19px;
+  text-indent: 1px;
   font-weight: 300;
   font-style: italic;
 }
 .note_input::-moz-placeholder {
   font-size: 19px;
-  text-indent: 19px;
+  text-indent: 1px;
   font-weight: 300;
   font-style: italic;
 }
 .note_input:-moz-placeholder {
   font-size: 19px;
-  text-indent: 19px;
+  text-indent: 1px;
   font-weight: 300;
   font-style: italic;
 }
 .note_input:-ms-input-placeholder {
   font-size: 19px;
-  text-indent: 19px;
+  text-indent: 1px;
   font-weight: 300;
   font-style: italic;
 }

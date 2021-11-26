@@ -36,8 +36,11 @@ const Task = ({ task }) => {
             <SubTasks key={subTask.id} subTask={subTask} />
           ))}
           <li>
-            <form action="" onSubmit={addSubTaskAction}>
+            <form onSubmit={addSubTaskAction}>
               <input
+                style={
+                  task.subTasks ? { marginLeft: "18px" } : { marginLeft: "0px" }
+                }
                 type="text"
                 className={style.subtask_input}
                 placeholder="Добавьте подзадачу..."
@@ -48,7 +51,7 @@ const Task = ({ task }) => {
           </li>
         </ul>
         <h3 className={style.subtask_info}>Заметки:</h3>
-        <form>
+        <form className={style.note_input_form}>
           <TextareaAutosize
             className={style.note_input}
             placeholder="Добавьте заметки..."

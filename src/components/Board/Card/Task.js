@@ -4,6 +4,8 @@ import TextareaAutosize from "@mui/base/TextareaAutosize";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postSubTask } from "../../../store/boardSlice";
+import Tags from "./Tags";
+import Deadlines from "./Deadlines"
 const Task = ({ task }) => {
   const [inputSubTask, setInputSubTask] = useState("");
   const dispatch = useDispatch();
@@ -60,7 +62,9 @@ const Task = ({ task }) => {
           />
         </form>
         <h3 className={style.subtask_info}>Теги:</h3>
+        <Tags tags={task.taskTags} />
         <h3 className={style.subtask_info}>Временные рамки:</h3>
+        <Deadlines />
       </div>
     </div>
   );

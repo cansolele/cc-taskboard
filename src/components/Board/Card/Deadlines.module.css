@@ -1,0 +1,32 @@
+.deadlines_container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+.item_container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.item_container span {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.add_deadline {
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 2px 4px;
+  height: 100%;
+  cursor: pointer;
+  background: linear-gradient(to right, rgb(227, 18, 218), rgb(229, 237, 67));
+}
+.add_deadline:active {
+  color: rgba(255, 255, 255, 0.6);
+}

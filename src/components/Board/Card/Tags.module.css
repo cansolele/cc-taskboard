@@ -1,0 +1,35 @@
+.tags_container {
+  padding-right: 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tag {
+  padding: 2px;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  white-space: normal;
+  height: 100%;
+  background-color: blue;
+  border-radius: 6px;
+}
+.add_tag {
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 2px 8px;
+  height: 100%;
+  cursor: pointer;
+  background: linear-gradient(to right, rgb(227, 18, 218), rgb(229, 237, 67));
+}
+.add_tag:active {
+  color: rgba(255, 255, 255, 0.6);
+}

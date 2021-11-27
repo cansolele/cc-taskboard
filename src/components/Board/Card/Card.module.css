@@ -1,5 +1,4 @@
 .card_container {
-  background-color: rgb(255, 255, 0);
   border-radius: 15px;
   min-width: 250px;
   padding: 5px 8px;
@@ -14,7 +13,6 @@
 }
 .card_title {
   font-family: "JetBrains Mono", monospace;
-  background-color: rgb(255, 233, 85);
   border-radius: 15px 0 0 15px;
   font-size: 25px;
   text-indent: 18.33px;
@@ -27,7 +25,6 @@
   width: 100%;
 }
 .triple_colon_button {
-  background-color: rgb(255, 233, 85);
   border-radius: 0 15px 15px 0;
   border: none;
   outline: none;

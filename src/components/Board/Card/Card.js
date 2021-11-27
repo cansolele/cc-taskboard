@@ -4,10 +4,20 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import Task from "./Task";
 const Card = ({ card }) => {
   return (
-    <div className={style.card_container}>
+    <div
+      style={{ backgroundColor: card.color }}
+      className={style.card_container}
+    >
       <form className={style.card_title_form}>
-        <input className={style.card_title} value={card.title} />
-        <button className={style.triple_colon_button}>
+        <input
+          style={{ backgroundColor: card.titleColor }}
+          className={style.card_title}
+          value={card.title}
+        />
+        <button
+          style={{ backgroundColor: card.titleColor }}
+          className={style.triple_colon_button}
+        >
           <span className={style.triple_colon_icon}>⁝</span>
         </button>
       </form>

@@ -2,8 +2,11 @@
   font-family: "IBM Plex Sans", sans-serif;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
-  height: 85%;
+  overflow: auto;
   margin-top: 5px;
+}
+.task_container::-webkit-scrollbar {
+  display: none;
 }
 .task_name_container {
   background-color: rgb(251, 243, 193);
@@ -32,8 +35,10 @@
 }
 .task_name_form {
   display: flex;
+  justify-content: space-between;
 }
 .triple_colon_button {
+  justify-self: flex-end;
   background-color: transparent;
   border: none;
   outline: none;
@@ -61,11 +66,10 @@
   overflow-y: auto;
   flex-direction: column;
   margin-top: 5px;
+  margin-bottom: 5px;
   margin-left: 20px;
 }
-.task_details::-webkit-scrollbar {
-  display: none;
-}
+
 .subtask_input {
   font-family: "IBM Plex Sans", sans-serif;
   width: 90%;

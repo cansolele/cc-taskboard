@@ -2,8 +2,9 @@
   border-radius: 15px;
   min-width: 250px;
   padding: 5px 8px;
-  max-width: 22%;
-  height: 450px;
+  max-width: 23%;
+  height: fit-content;
+  max-height: 100%;
   margin-left: 30px;
   display: flex;
   flex-direction: column;
@@ -42,21 +43,23 @@
 }
 
 .add_task_btn {
-  margin: 0 auto;
-  width: 30px;
-  height: 30px;
-  padding: 0.2rem;
-  background: transparent;
+  margin: 5px auto 0;
+  min-width: 30px;
+  min-height: 30px;
+  background: white;
   border: none;
   cursor: pointer;
   border-radius: 50%;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .add_task_btn_icon {
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 16px;
+  min-height: 16px;
 }
-.add_task_btn_icon:active {
-  min-width: 85%;
-  min-height: 85%;
+.add_task_btn:active > .add_task_btn_icon {
+  min-width: 10px;
+  min-height: 10px;
 }

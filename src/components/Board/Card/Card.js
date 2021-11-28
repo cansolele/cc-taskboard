@@ -1,6 +1,6 @@
 import style from "./Card.module.css";
 import { IconContext } from "react-icons";
-import { AiOutlinePlusCircle } from "react-icons/ai";
+import { BsPlusLg } from "react-icons/bs";
 import Task from "./Task";
 const Card = ({ card }) => {
   return (
@@ -27,7 +27,7 @@ const Card = ({ card }) => {
       ))}
       <button className={style.add_task_btn}>
         <IconContext.Provider value={{ className: style.add_task_btn_icon }}>
-          <AiOutlinePlusCircle />
+          <BsPlusLg />
         </IconContext.Provider>
       </button>
     </div>

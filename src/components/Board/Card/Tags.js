@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./Tags.module.css";
+import { IconContext } from "react-icons";
+import { BsPlusLg } from "react-icons/bs";
 
 const Tags = ({ tags }) => {
   return (
@@ -10,7 +12,12 @@ const Tags = ({ tags }) => {
         </div>
       ))}
 
-      <button className={style.add_tag}>+Добавить...</button>
+      <button className={style.add_tag}>
+        <IconContext.Provider value={{ className: style.add_tag_btn_icon }}>
+          <BsPlusLg />
+        </IconContext.Provider>{" "}
+        Добавить...
+      </button>
     </div>
   );
 };

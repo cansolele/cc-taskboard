@@ -5,8 +5,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postSubTask } from "../../../store/boardSlice";
 import Tags from "./Tags";
-import Deadlines from "./Deadlines"
-const Task = ({ task }) => {
+import Deadlines from "./Deadlines";
+const Task = ({ task, borderColor }) => {
   const [inputSubTask, setInputSubTask] = useState("");
   const dispatch = useDispatch();
 
@@ -20,7 +20,10 @@ const Task = ({ task }) => {
 
   return (
     <div className={style.task_container}>
-      <div className={style.task_name_container}>
+      <div
+        style={{ borderBottom: "2px " + borderColor + " solid" }}
+        className={style.task_name_container}
+      >
         <form className={style.task_name_form}>
           <label>
             <input type="checkbox" defaultChecked={task.completed} />

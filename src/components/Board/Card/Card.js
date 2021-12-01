@@ -23,7 +23,7 @@ const Card = ({ card }) => {
       </form>
 
       {card.tasks?.map((task) => (
-        <Task key={task.id} task={task} />
+        <Task key={task.id} task={task} borderColor={card.color} />
       ))}
       <button className={style.add_task_btn}>
         <IconContext.Provider value={{ className: style.add_task_btn_icon }}>

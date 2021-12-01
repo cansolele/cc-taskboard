@@ -9,8 +9,7 @@
   display: none;
 }
 .task_name_container {
-  background-color: rgb(251, 243, 193);
-  border-radius: 15px;
+  border-radius: 15px 15px 0px 0px;
   height: 50px;
 }
 .task_name_container form {

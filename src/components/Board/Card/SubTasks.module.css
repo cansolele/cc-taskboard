@@ -5,17 +5,36 @@
   flex-wrap: wrap;
   align-items: center;
 }
-.subtasks_li_container label {
+.item_container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
 }
-.subtasks_li_container label::-webkit-scrollbar {
+
+.hidden_checkbox {
+  -webkit-appearance: none;
+  position: absolute;
+}
+.custom_checkbox {
+  margin-top: 5px;
+  position: relative;
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.checkmark_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: auto;
   display: none;
 }
-.subtasks_li_container label input {
-  margin-top: 7px;
+.hidden_checkbox:checked ~ .custom_checkbox .checkmark_icon {
+  display: block;
 }
 
 .name_of_subtask {
@@ -33,7 +52,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-self: center;
-  margin-left: 14px;
+  margin-left: 19px;
 }
 .subtask_tag {
   margin-left: 4px;

@@ -15,6 +15,29 @@
 .task_name_container form {
   height: 100%;
 }
+.hidden_checkbox {
+  -webkit-appearance: none;
+  position: absolute;
+}
+.custom_checkbox {
+  position: relative;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 9px;
+  border: 2px solid black;
+}
+.checkmark_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  display: none;
+}
+.hidden_checkbox:checked ~ .custom_checkbox .checkmark_icon {
+  display: block;
+}
 .task_name_container label {
   display: flex;
   flex-direction: row;
@@ -88,7 +111,6 @@
   border: none;
   outline: none;
   font-size: 20px;
-  line-height: 0.95;
   font-weight: 200;
   height: 50px;
   width: 100%;

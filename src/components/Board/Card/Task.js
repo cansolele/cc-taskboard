@@ -26,9 +26,26 @@ const Task = ({ task, borderColor }) => {
       >
         <form className={style.task_name_form}>
           <label>
-            <input type="checkbox" defaultChecked={task.completed} />
-            <input value={task.taskName} className={style.task_name_input} />
+            <input
+              className={style.hidden_checkbox}
+              type="checkbox"
+              defaultChecked={task.completed}
+            />
+            <div className={style.custom_checkbox}>
+              <svg
+                className={style.checkmark_icon}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#000"
+                  d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                />
+              </svg>
+            </div>
           </label>
+          <input value={task.taskName} className={style.task_name_input} />
+
           <button className={style.triple_colon_button}>
             <span className={style.triple_colon_icon}>⁝</span>
           </button>

@@ -19,7 +19,10 @@ const Task = ({ task, borderColor }) => {
   };
 
   return (
-    <div className={style.task_container}>
+    <div
+      className={style.task_container}
+      style={{ backgroundColor: task.color_set.background_color }}
+    >
       <div
         style={{ borderBottom: "2px " + borderColor + " solid" }}
         className={style.task_name_container}

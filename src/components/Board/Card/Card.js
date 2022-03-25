@@ -5,17 +5,17 @@ import Task from "./Task";
 const Card = ({ card }) => {
   return (
     <div
-      style={{ backgroundColor: card.color }}
+      style={{ backgroundColor: card.color_set.background_color }}
       className={style.card_container}
     >
       <form className={style.card_title_form}>
         <input
-          style={{ backgroundColor: card.titleColor }}
+          style={{ backgroundColor: card.color_set.text_color }}
           className={style.card_title}
           value={card.title}
         />
         <button
-          style={{ backgroundColor: card.titleColor }}
+          style={{ backgroundColor: card.color_set.text_color }}
           className={style.triple_colon_button}
         >
           <span className={style.triple_colon_icon}>⁝</span>

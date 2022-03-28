@@ -9,7 +9,7 @@ const SubTasks = ({ subTask }) => {
           <input
             className={style.hidden_checkbox}
             type="checkbox"
-            defaultChecked={subTask.completed}
+            defaultChecked={subTask.exec}
           />
           <div className={style.custom_checkbox}>
             <svg
@@ -24,7 +24,7 @@ const SubTasks = ({ subTask }) => {
             </svg>
           </div>
         </label>
-        <h4 className={style.name_of_subtask}>{subTask.subTaskName}</h4>
+        <h4 className={style.name_of_subtask}>{subTask.title}</h4>
         <div className={style.subtask_buttons}>
           {" "}
           {!subTask.subTaskTags && (
@@ -43,12 +43,15 @@ const SubTasks = ({ subTask }) => {
       </div>
 
       <div className={style.subtasks_tags_container}>
-        {subTask.subTaskTags?.map((tag) => (
+        {subTask.tags?.map((tag) => (
           <div
-            style={{ backgroundColor: tag.tagColor }}
+            style={{
+              backgroundColor: tag.background_color,
+              color: tag.text_color,
+            }}
             className={style.subtask_tag}
           >
-            {tag.tagName}
+            {tag.title}
           </div>
         ))}
         {subTask.subTaskTags && (

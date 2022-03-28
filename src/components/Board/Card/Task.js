@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postSubTask } from "../../../store/boardSlice";
 import Tags from "./Tags";
-import Deadlines from "./Deadlines";
+import Timelines from "./Timelines";
 const Task = ({ task, borderColor }) => {
   const [inputSubTask, setInputSubTask] = useState("");
   const dispatch = useDispatch();
@@ -19,10 +19,7 @@ const Task = ({ task, borderColor }) => {
   };
 
   return (
-    <div
-      className={style.task_container}
-      style={{ backgroundColor: task.color_set.background_color }}
-    >
+    <div className={style.task_container}>
       <div
         style={{ borderBottom: "2px " + borderColor + " solid" }}
         className={style.task_name_container}
@@ -32,7 +29,7 @@ const Task = ({ task, borderColor }) => {
             <input
               className={style.hidden_checkbox}
               type="checkbox"
-              defaultChecked={task.completed}
+              defaultChecked={task.exec}
             />
             <div className={style.custom_checkbox}>
               <svg
@@ -47,7 +44,7 @@ const Task = ({ task, borderColor }) => {
               </svg>
             </div>
           </label>
-          <input value={task.taskName} className={style.task_name_input} />
+          <input value={task.title} className={style.task_name_input} />
 
           <button className={style.triple_colon_button}>
             <span className={style.triple_colon_icon}>⁝</span>
@@ -57,7 +54,7 @@ const Task = ({ task, borderColor }) => {
       <div className={style.task_details}>
         <h3 className={style.subtask_info}>Подзадачи:</h3>
         <ul>
-          {task.subTasks?.map((subTask) => (
+          {task.subtasks?.map((subTask) => (
             <SubTasks key={subTask.id} subTask={subTask} />
           ))}
           <li>
@@ -85,9 +82,9 @@ const Task = ({ task, borderColor }) => {
           />
         </form>
         <h3 className={style.subtask_info}>Теги:</h3>
-        <Tags tags={task.taskTags} />
+        <Tags tags={task.tags} />
         <h3 className={style.subtask_info}>Временные рамки:</h3>
-        <Deadlines />
+        <Timelines timelines={task.timelines} />
       </div>
     </div>
   );

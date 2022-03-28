@@ -7,8 +7,14 @@ const Tags = ({ tags }) => {
   return (
     <div className={style.tags_container}>
       {tags?.map((tag) => (
-        <div style={{ backgroundColor: tag.tagColor }} className={style.tag}>
-          {tag.tagName}
+        <div
+          style={{
+            backgroundColor: tag.background_color,
+            color: tag.text_color,
+          }}
+          className={style.tag}
+        >
+          {tag.title}
         </div>
       ))}
 

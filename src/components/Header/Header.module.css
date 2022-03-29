@@ -1,18 +1,16 @@
 .header {
   font-family: "IBM Plex Sans", sans-serif;
   display: flex;
-  height: 70px;
+  height: 7vh;
   width: 100%;
   background-color: rgb(143, 202, 255);
-  position: fixed;
-  top: 0;
 }
 .header_icon_container {
   display: flex;
   background-color: rgb(143, 255, 150);
   margin: 3px 15px;
-  min-height: 64px;
-  min-width: 64px;
+  min-height: 60px;
+  min-width: 60px;
 }
 .header_icon {
   font-size: 17px;

@@ -4,7 +4,7 @@ export const fetchBoard = createAsyncThunk("board/fetchBoard", async () => {
   const response = await fetch("https://server/board", {
     credentials: "omit",
     headers: {
-      "App-Token": "yourtoken",
+      "App-Token": "apptokenhere",
     },
     body: "eyJib2FyZF9pZCI6IDF9",
     method: "POST",

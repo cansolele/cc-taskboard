@@ -1,6 +1,6 @@
 import style from "./Task.module.css";
 import SubTasks from "./SubTasks";
-import TextareaAutosize from "@mui/base/TextareaAutosize";
+import TextareaAutosize from "react-textarea-autosize";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postSubTask } from "../../../store/boardSlice";

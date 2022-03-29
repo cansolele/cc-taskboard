@@ -2,7 +2,6 @@ import style from "./Header.module.css";
 import { useSelector } from "react-redux";
 const Header = () => {
   const header = useSelector((state) => state.board.board.header);
-  console.log(header);
   return (
     <header
       className={style.header}

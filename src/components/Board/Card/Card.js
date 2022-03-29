@@ -1,5 +1,6 @@
 import style from "./Card.module.css";
 import { IconContext } from "react-icons";
+import TextareaAutosize from "react-textarea-autosize";
 import { BsPlusLg } from "react-icons/bs";
 import Task from "./Task";
 const Card = ({ card }) => {
@@ -9,12 +10,14 @@ const Card = ({ card }) => {
       className={style.card_container}
     >
       <form className={style.card_title_form}>
-        <input
+        <TextareaAutosize
+          className={style.card_title}
           style={{
             backgroundColor: card.header_background_color,
             color: card.header_text_color,
           }}
-          className={style.card_title}
+          spellCheck="false"
+          maxlength="60"
           value={card.title}
         />
         <button

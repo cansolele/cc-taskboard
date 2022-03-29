@@ -12,18 +12,23 @@
 .card_title_form {
   display: flex;
 }
+
 .card_title {
   font-family: "JetBrains Mono", monospace;
   border-radius: 15px 0 0 15px;
   font-size: 25px;
-  text-indent: 18.33px;
+  padding-left: 18.33px;
   font-style: italic;
   font-weight: bold;
   color: rgb(102, 102, 102);
   text-align: center;
   border: none;
   outline: none;
+  resize: none;
   width: 100%;
+}
+.card_title::-webkit-scrollbar {
+  display: none;
 }
 .triple_colon_button {
   border-radius: 0 15px 15px 0;

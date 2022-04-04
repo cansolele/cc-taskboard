@@ -6,14 +6,19 @@ import { useDispatch } from "react-redux";
 import { postSubTask } from "../../../store/boardSlice";
 import Tags from "./Tags";
 import Timelines from "./Timelines";
-const Task = ({ task, borderColor }) => {
+const Task = ({ board_id, card_id, task, borderColor }) => {
   const [inputSubTask, setInputSubTask] = useState("");
   const dispatch = useDispatch();
-
   const addSubTaskAction = (event) => {
     event.preventDefault();
     if (inputSubTask.replace(/[\s.,%]/g, "") !== "") {
-      dispatch(postSubTask(inputSubTask));
+      const params = {
+        inputSubTask: inputSubTask,
+        board_id: board_id,
+        card_id: card_id,
+        task_id: task.id,
+      };
+      dispatch(postSubTask(params));
       setInputSubTask("");
     }
   };

@@ -1,7 +1,5 @@
 import style from "./Header.module.css";
-import { useSelector } from "react-redux";
-const Header = () => {
-  const header = useSelector((state) => state.board.board.header);
+const Header = ({ header }) => {
   return (
     <header
       className={style.header}
@@ -14,9 +12,9 @@ const Header = () => {
         <div className={style.header_icon}>ICON</div>
       </div>
       <div className={style.next_task}>
-        CC TaskBoard :: Следующая задача -{" "}
+        {header?.title} :: Следующая задача -{" "}
         <a href="/#" className={style.link_to_task}>
-          {header?.title}
+          ????
         </a>
       </div>
     </header>

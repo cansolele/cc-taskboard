@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import TextareaAutosize from "react-textarea-autosize";
 import { BsPlusLg } from "react-icons/bs";
 import Task from "./Task";
-const Card = ({ card }) => {
+const Card = ({ card, board_id }) => {
   return (
     <div
       style={{ backgroundColor: card.background_color }}
@@ -17,7 +17,7 @@ const Card = ({ card }) => {
             color: card.header_text_color,
           }}
           spellCheck="false"
-          maxlength="60"
+          maxLength="60"
           value={card.title}
         />
         <button
@@ -29,7 +29,13 @@ const Card = ({ card }) => {
       </form>
 
       {card.tasks?.map((task) => (
-        <Task key={task.id} task={task} borderColor={card.background_color} />
+        <Task
+          board_id={board_id}
+          card_id={card.id}
+          key={task.id}
+          task={task}
+          borderColor={card.background_color}
+        />
       ))}
       <button className={style.add_task_btn}>
         <IconContext.Provider value={{ className: style.add_task_btn_icon }}>

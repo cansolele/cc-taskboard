@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./Timelines.module.css";
 
 const Timelines = () => {

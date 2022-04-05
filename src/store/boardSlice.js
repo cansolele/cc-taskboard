@@ -14,7 +14,7 @@ export const fetchBoard = createAsyncThunk("board/fetchBoard", async () => {
     // Temporary const
     board_id: 1, //Board ID
   };
-  const response = await fetch("http://192.168.56.2:3001/board", {
+  const response = await fetch("http://192.168.31.79:3001/board", {
     //Server address + /board
     credentials: "omit",
     headers: {
@@ -40,13 +40,7 @@ export const postSubTask = createAsyncThunk(
         title: params.inputSubTask,
         executors: [],
         exec: false,
-        tags: [
-          {
-            title: "test",
-            text_color: "#FFF",
-            background_color: "#000",
-          },
-        ],
+        tags: [],
         timelines: {
           preferred_time: 1234567890,
           max_time: 1234567890,
@@ -54,7 +48,7 @@ export const postSubTask = createAsyncThunk(
         },
       },
     };
-    const response = await fetch("http://192.168.56.2:3001/subtask", {
+    const response = await fetch("http://192.168.31.79:3001/subtask", {
       //Server address + /board
       method: "PUT",
       credentials: "omit",
@@ -66,6 +60,31 @@ export const postSubTask = createAsyncThunk(
     });
     const subtask_id = await response.json();
     dispatch(addSubTask({ subtask_id, subTask }));
+  }
+);
+export const changeSubTask = createAsyncThunk(
+  "board/changeSubTask",
+  async (params, { dispatch }) => {
+    const subTask = {
+      board_id: params.board_id,
+      card_id: params.card_id,
+      task_id: params.task_id,
+      subtask_id: params.subtask_id,
+      title: params.inputSubTask,
+      executors: [],
+      exec: false,
+    };
+    await fetch("http://192.168.31.79:3001/subtask", {
+      //Server address + /board
+      method: "PATCH",
+      credentials: "omit",
+      headers: {
+        "App-Token": Buffer(JSON.stringify(APP_TOKEN)).toString("base64"),
+      },
+      body: Buffer(JSON.stringify(subTask)).toString("base64"),
+      mode: "cors",
+    });
+    dispatch(editSubTask({ subTask }));
   }
 );
 const boardSlice = createSlice({
@@ -85,6 +104,20 @@ const boardSlice = createSlice({
       subtask.id = action.payload.subtask_id;
       state.board.cards[cardID].tasks[taskID].subtasks.push(subtask);
     },
+    editSubTask(state, action) {
+      // console.log(action.payload.subTask);
+      // const cardID = state.board.cards.findIndex(
+      //   (item) => item.id === action.payload.card_id
+      // );
+      // const taskID = state.board.cards[cardID].tasks.findIndex(
+      //   (item) => item.id === action.payload.task_id
+      // );
+      // const subtaskID = state.board.cards[cardID].tasks[
+      //   taskID
+      // ].subtasks.findIndex((item) => item.id === action.payload.subtask_id);
+      // state.board.cards[cardID].tasks[taskID].subtasks[subtaskID].title =
+      //   action.payload.title;
+    },
   },
   extraReducers: {
     [fetchBoard.pending]: (state) => {},
@@ -94,5 +127,5 @@ const boardSlice = createSlice({
     [fetchBoard.rejected]: (state, action) => {},
   },
 });
-const { addSubTask } = boardSlice.actions;
+const { editSubTask, addSubTask } = boardSlice.actions;
 export default boardSlice.reducer;

@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./Tags.module.css";
 import { IconContext } from "react-icons";
 import { BsPlusLg } from "react-icons/bs";

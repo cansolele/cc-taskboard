@@ -40,11 +40,16 @@
 .name_of_subtask {
   font-family: "IBM Plex Sans", sans-serif;
   font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: inline-block;
   font-weight: 300;
   font-size: 20px;
   margin-left: 5px;
   width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
 }
 .subtasks_tags_container {
   display: flex;

@@ -1,5 +1,5 @@
 import style from "./Board.module.css";
-import Card from "./Card/Card";
+import Cards from "./Cards/Cards";
 
 const Board = ({ board }) => {
   return (
@@ -8,7 +8,7 @@ const Board = ({ board }) => {
       style={{ backgroundColor: board.background_color }}
     >
       {board.cards?.map((card) => (
-        <Card board_id={board.id} key={card.id} card={card} />
+        <Cards board_id={board.id} key={card.id} card={card} />
       ))}
     </div>
   );

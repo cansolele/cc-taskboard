@@ -1,0 +1,72 @@
+.task_name_container {
+  border-radius: 15px 15px 0px 0px;
+  min-height: 50px;
+  display: flex;
+}
+.hidden_checkbox {
+  -webkit-appearance: none;
+  position: absolute;
+}
+.custom_checkbox {
+  position: relative;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 9px;
+  border: 2px solid black;
+}
+.checkmark_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  display: none;
+}
+.hidden_checkbox:checked ~ .custom_checkbox .checkmark_icon {
+  display: block;
+}
+.task_name_container label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  margin: auto 10px;
+}
+.task_name_input {
+  font-family: "IBM Plex Sans", sans-serif;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+  width: 100%;
+}
+.task_name_input::-webkit-scrollbar {
+  display: none;
+}
+.task_name_form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.triple_colon_button {
+  justify-self: flex-end;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.triple_colon_icon {
+  padding-right: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(102, 102, 102);
+  font-style: normal;
+}
+.triple_colon_icon:hover {
+  color: rgba(102, 102, 102, 0.7);
+}

@@ -1,7 +1,33 @@
 import style from "./SubTasks.module.css";
 import { IconContext } from "react-icons";
+import { useDispatch } from "react-redux";
+import TextareaAutosize from "@mui/base/TextareaAutosize";
 import { BsPlusLg } from "react-icons/bs";
-const SubTasks = ({ subTask }) => {
+import { useState } from "react";
+import { changeSubTask } from "../../../store/boardSlice";
+const SubTasks = ({ board_id, card_id, task_id, subTask }) => {
+  const [inputSubTask, setInputSubTask] = useState(subTask.title);
+  const [isEdit, setIsEdit] = useState(false);
+  const dispatch = useDispatch();
+  const editSubTaskAction = () => {
+    if (
+      inputSubTask.replace(/[\s.,%]/g, "") !== "" &&
+      inputSubTask !== subTask.title
+    ) {
+      const params = {
+        inputSubTask: inputSubTask,
+        board_id: board_id,
+        card_id: card_id,
+        task_id: task_id,
+        subtask_id: subTask.id,
+      };
+      setIsEdit(false);
+      dispatch(changeSubTask(params));
+    } else {
+      setInputSubTask(subTask.title);
+      setIsEdit(false);
+    }
+  };
   return (
     <li className={style.subtasks_li_container}>
       <div className={style.item_container}>
@@ -24,7 +50,24 @@ const SubTasks = ({ subTask }) => {
             </svg>
           </div>
         </label>
-        <h4 className={style.name_of_subtask}>{subTask.title}</h4>
+        {isEdit ? (
+          <TextareaAutosize
+            value={inputSubTask}
+            spellCheck="false"
+            maxLength="60"
+            onChange={(e) => setInputSubTask(e.target.value)}
+            onBlur={editSubTaskAction}
+            className={style.name_of_subtask}
+          />
+        ) : (
+          <span
+            onClick={() => setIsEdit(true)}
+            className={style.name_of_subtask}
+          >
+            {inputSubTask}
+          </span>
+        )}
+
         <div className={style.subtask_buttons}>
           {" "}
           {!subTask.subTaskTags && (

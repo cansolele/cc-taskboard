@@ -1,0 +1,26 @@
+.task_container {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  overflow: auto;
+  margin-top: 5px;
+}
+.task_container::-webkit-scrollbar {
+  display: none;
+}
+
+.subtask_info {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 20px;
+}
+.task_details {
+  display: flex;
+  max-height: 85%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}

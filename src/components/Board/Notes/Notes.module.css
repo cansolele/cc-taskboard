@@ -1,0 +1,41 @@
+.note_input_form {
+  margin-right: 20px;
+}
+.note_input {
+  font-family: "IBM Plex Sans", sans-serif;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: 200;
+  height: 50px;
+  width: 100%;
+  resize: none;
+  overflow: auto;
+}
+.note_input::-webkit-scrollbar {
+  display: none;
+}
+.note_input::-webkit-input-placeholder {
+  font-size: 19px;
+  text-indent: 1px;
+  font-weight: 300;
+  font-style: italic;
+}
+.note_input::-moz-placeholder {
+  font-size: 19px;
+  text-indent: 1px;
+  font-weight: 300;
+  font-style: italic;
+}
+.note_input:-moz-placeholder {
+  font-size: 19px;
+  text-indent: 1px;
+  font-weight: 300;
+  font-style: italic;
+}
+.note_input:-ms-input-placeholder {
+  font-size: 19px;
+  text-indent: 1px;
+  font-weight: 300;
+  font-style: italic;
+}

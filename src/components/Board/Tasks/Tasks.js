@@ -12,6 +12,9 @@ const Tasks = ({ board_id, card_id, task, borderColor }) => {
         borderColor={borderColor}
         title={task.title}
         exec={task.exec}
+        board_id={board_id}
+        card_id={card_id}
+        task_id={task.id}
       />
       <div className={style.task_details}>
         <h3 className={style.subtask_info}>Подзадачи:</h3>
@@ -35,7 +38,12 @@ const Tasks = ({ board_id, card_id, task, borderColor }) => {
           </li>
         </ul>
         <h3 className={style.subtask_info}>Заметки:</h3>
-        <Notes notes={task.notes} />
+        <Notes
+          notes={task.notes}
+          board_id={board_id}
+          card_id={card_id}
+          task_id={task.id}
+        />
         <h3 className={style.subtask_info}>Теги:</h3>
         <Tags tags={task.tags} />
         <h3 className={style.subtask_info}>Временные рамки:</h3>

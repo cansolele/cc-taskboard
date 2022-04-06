@@ -4,12 +4,13 @@ import { useDispatch } from "react-redux";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 import { BsPlusLg } from "react-icons/bs";
 import { useState } from "react";
-import { changeSubTask } from "../../../store/boardSlice";
+import { changeSubTaskTitle } from "../../../store/boardSlice";
+import { changeSubTaskStatus } from "../../../store/boardSlice";
 const SubTasks = ({ board_id, card_id, task_id, subTask }) => {
   const [inputSubTask, setInputSubTask] = useState(subTask.title);
   const [isEdit, setIsEdit] = useState(false);
   const dispatch = useDispatch();
-  const editSubTaskAction = () => {
+  const editSubTaskTitleAction = () => {
     if (
       inputSubTask.replace(/[\s.,%]/g, "") !== "" &&
       inputSubTask !== subTask.title
@@ -22,11 +23,21 @@ const SubTasks = ({ board_id, card_id, task_id, subTask }) => {
         subtask_id: subTask.id,
       };
       setIsEdit(false);
-      dispatch(changeSubTask(params));
+      dispatch(changeSubTaskTitle(params));
     } else {
       setInputSubTask(subTask.title);
       setIsEdit(false);
     }
+  };
+  const editSubTaskStatusAction = (isChecked) => {
+    const params = {
+      board_id: board_id,
+      card_id: card_id,
+      task_id: task_id,
+      subtask_id: subTask.id,
+      exec: isChecked,
+    };
+    dispatch(changeSubTaskStatus(params));
   };
   return (
     <li className={style.subtasks_li_container}>
@@ -35,6 +46,7 @@ const SubTasks = ({ board_id, card_id, task_id, subTask }) => {
           <input
             className={style.hidden_checkbox}
             type="checkbox"
+            onChange={(e) => editSubTaskStatusAction(e.target.checked)}
             defaultChecked={subTask.exec}
           />
           <div className={style.custom_checkbox}>
@@ -56,7 +68,7 @@ const SubTasks = ({ board_id, card_id, task_id, subTask }) => {
             spellCheck="false"
             maxLength="60"
             onChange={(e) => setInputSubTask(e.target.value)}
-            onBlur={editSubTaskAction}
+            onBlur={editSubTaskTitleAction}
             className={style.name_of_subtask}
           />
         ) : (

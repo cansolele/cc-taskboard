@@ -13,6 +13,8 @@ const Cards = ({ card, board_id }) => {
         bgColor={card.header_background_color}
         textColor={card.header_text_color}
         title={card.title}
+        board_id={board_id}
+        card_id={card.id}
       />
       {card.tasks?.map((task) => (
         <Tasks
